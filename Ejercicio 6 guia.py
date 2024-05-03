@@ -20,9 +20,9 @@ def validar_contrasena(contraseña):
         return False
     if not re.search("\d", contraseña):
         return False
-    if not re.search("['#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']", contraseña):
+    if not re.search("[!'#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']", contraseña):
         return False
-    
+
     return True
 
 def main():

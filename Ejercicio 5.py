@@ -20,9 +20,9 @@ def main():
         celsius = fahrenheit_a_celsius(fahrenheit)
         print(f"La conversion de:", fahrenheit, "grados fahrenheit es igual a:", celsius,"grados Celsius" )
     else:
-        print("*************************************")
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         print("Opción no válida. Seleccione 1 o 2.")
-        print("*************************************")
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         return main()
 if __name__ == "__main__":
     main()

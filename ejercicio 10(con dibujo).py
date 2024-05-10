@@ -10,7 +10,7 @@ while True:
     letra = input("Ingrese una letra: ")
     if letra in secreta:
         for i in range(len(cadena)):
-            if secreta[i] ==letra:
+            if secreta[i] == letra:
                 cadena = cadena[:i] + letra + cadena[i+1:]
     else:
         intentos += 1

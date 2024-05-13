@@ -1,4 +1,6 @@
 import random
+
+
 palabras = palabras = ['python', 'java', 'javascript', 'html', 'css', 'ruby', 'php', 'cocodrilo']
 secreta = random.choice(palabras)
 cadena = "_" * len(secreta)
@@ -7,7 +9,7 @@ intentos = 0
 
 while True:
     print(cadena)
-    letra = input("Ingrese una letra: ")
+    letra = (input("Ingrese una letra: ")).lower()
     if letra in secreta:
         for i in range(len(cadena)):
             if secreta[i] == letra:

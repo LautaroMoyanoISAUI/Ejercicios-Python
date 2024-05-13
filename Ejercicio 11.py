@@ -12,7 +12,7 @@ def juego_busqueda_binaria():
         intento += 1
 
         print(f"Es {intento_programa} tu numero?")
-        respuesta = input("Ingrese menor, mayor o igual: ")
+        respuesta = (input("Ingrese menor, mayor o igual: ")).lower()
 
         if respuesta == "igual":
             print(f"Adivine en {intento} intentos!! Gracias por jugar!! <3")

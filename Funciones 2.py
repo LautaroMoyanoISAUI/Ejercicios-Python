@@ -17,19 +17,16 @@ def calcularMaxMin(lista):
     return maximo, minimo
 
 def principal():
-    lista = []
     numeros = []
 
     while True:
-        numero = int(input("Ingrese un numero: "))
-        numeros.append(float(lista))
-        if numero != None:
+        numero = input("Ingrese un numero(O presione enter si no quiere ingresar mas): ")
+        if numero:
+            numeros.append(float(numero))
+        else: 
             maximo, minimo = calcularMaxMin(numeros)
             print(f"El numero maximo es: {maximo}")
             print(f"El numero minimo es: {minimo}")
-        else: 
-            print("No se ingreso ningun numero")
-            break
 
 principal()
     

@@ -30,10 +30,10 @@ def principal():
 
         else:
             intento += 1
-            intentos_restantes = 3 -intento
+            intentos_restantes = 3 - intento
             if intentos_restantes > 0:
 
-                print(f"Usuario o contraseña incorrecto! te quedan {intentos_restantes} intentos.")
+                print(f"Usuario o contraseña incorrecto! Te quedan {intentos_restantes} intentos.")
             else:
                 print("Ingreso Denegado")
                 break

@@ -6,7 +6,10 @@ cadena con un espacio adicional tras cada letra. Por ejemplo, “Hola, tú” de
 def ConvertirEspaciado (texto):
     texto_espaciado = ""
     for letra in texto:
-        texto_espaciado += letra + ' '
+        if letra[0]:
+            texto_espaciado += letra + ' '
+        else:
+            texto_espaciado += ' ' + letra
     
     return texto_espaciado
 

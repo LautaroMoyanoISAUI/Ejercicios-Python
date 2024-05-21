@@ -9,7 +9,7 @@ def contar_letras(cadena):
             if letra in contador_letras:
                 contador_letras[letra] += 1
             else:
-                contador_letras = 1
+                contador_letras[letra] = 1
     
     return contador_letras
 

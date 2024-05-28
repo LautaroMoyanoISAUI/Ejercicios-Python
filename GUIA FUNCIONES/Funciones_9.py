@@ -4,7 +4,7 @@ lista ordenada alfabéticamente de esas cadenas, ignorando mayúsculas y minúsc
 def ordenar_lista(lista):
     return sorted(lista, key=lambda x: x.lower())
 
-# Ejemplo de uso
+
 lista = ["Zorro", "Gato", "perro", "elefante"]
 lista_ordenada = ordenar_lista(lista)
 

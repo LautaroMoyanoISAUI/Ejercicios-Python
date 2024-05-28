@@ -6,10 +6,10 @@ def palabra_por_inicial(lista_palabras):
     diccionario_iniciales = {}
     for palabra in lista_palabras:
         letra_inicial = palabra[0].lower()
-        if letra_inicial not in diccionario_iniciales:
-            diccionario_iniciales[letra_inicial] = [palabra]
-        else:
+        if letra_inicial in diccionario_iniciales:
             diccionario_iniciales[letra_inicial].append(palabra)
+        else:
+            diccionario_iniciales[letra_inicial] = [palabra]
     return diccionario_iniciales
 
 

@@ -14,7 +14,7 @@ def palabra_por_inicial(lista_palabras):
 
 
 
-lista_palabras = ["arbol", "luna", "montaña", "río", "casa", "libro", "gato", "perro", "sol", "mar", "araña"]
+lista_palabras = ["arbol" "luna", "montaña", "río", "casa", "libro", "gato", "perro", "sol", "mar", "araña"]
 
 resultado = palabra_por_inicial(lista_palabras)
 

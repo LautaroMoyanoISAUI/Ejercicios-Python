@@ -19,5 +19,5 @@ def contar_palabras(lista):
                 diccionario[palabra] += 1
     return diccionario
 
-frases = ("Hola, ¿cómo estás?","¡Qué día tan bonito!","Gracias por tu ayuda.")
+frases = ("Hola, ¿cómo estás?","hola¡Qué día tan bonito!","Gracias por tu ayuda.")
 print(contar_palabras(frases))

@@ -26,5 +26,5 @@ class ContDecreciente:
         self.entry.config(state="readonly")
 
 root = tk.Tk()
-app = ContCreciente(root)
+app = ContDecreciente(root)
 root.mainloop()

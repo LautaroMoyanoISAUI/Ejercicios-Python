@@ -50,6 +50,7 @@ class Calculadora2:
         self.button_1 = tk.Button(self.master, text='Calcular', command=self.operacion)
         self.button_1.grid(row=4, column=2, padx=10, pady=10)
 
+
     def operacion(self):
         num1 = float(self.Entry_1_var.get())
         num2 = float(self.Entry_2_var.get())

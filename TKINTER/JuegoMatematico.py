@@ -1,20 +1,20 @@
 import tkinter as tk
-
+from random import randint, choice
 class JuegoMatematico:
-    def __init__(self):
+    def __init__(self, master):
         self.master = master
-        self.master.geometry("400x250")
+        self.master.geometry("500x250")
         self.master.title("Juego Matematico")
         self.master.resizable(False, False)
 
         self.label_juegos = tk.Label(self.master, text="Juegos:")
-        self.label_juegos.grid(row=0, column=0, padx=10, pady=10)
+        self.label_juegos.grid(row=4, column=5, padx=5, pady=5)
 
         self.label_buenos = tk.Label(self.master, text="Buenos:")
-        self.label_buenos.grid(row=0, column=2, padx=10, pady=10)
+        self.label_buenos.grid(row=5, column=5, padx=5, pady=5)
 
         self.label_malos = tk.Label(self.master, text="Malos:")
-        self.label_malos.grid(row=0, column=4, padx=10, pady=10)
+        self.label_malos.grid(row=6, column=5, padx=5, pady=5)
 
         self.label_num1 = tk.Label(self.master, text="")
         self.label_num1.grid(row=1, column=0, padx=10, pady=10)
@@ -56,19 +56,45 @@ class JuegoMatematico:
 
         self.nuevo_juego()
 
-    def operacion(self):
-        num1 = float(self.Entry_1_var.get())
-        num2 = float(self.Entry_2_var.get())
-        operacion = self.opcion_var.get()
-        if operacion == "sumar":
-            resultado = float(num1 + num2)
-        elif operacion == "resta":
-            resultado = float(num1 - num2)
-        elif operacion == "multiplicacion":
-            resultado = float(num1 * num2)
-        elif operacion == "division":
-            if num2 != 0:
-                resultado = float(num1 / num2)
-            else:
-                resultado = "Error: Division por cero"
-        
+    def nuevo_juego(self):
+        self.num1 = randint(1, 10)
+        self.num2 = randint(1, 10)
+        self.operacion_random = choice(["+", "-", "*", "/"])
+
+        self.label_num1.config(text=str(self.num1))
+        self.label_num2.config(text=str(self.num2))
+        self.label_operacion.config(text=self.operacion_random)
+
+        self.entry_resultado.delete(0, tk.END)
+
+    def verificar_resultado(self):
+        resultado = self.entry_resultado.get()
+        if resultado == "":
+            return
+
+        resultado = float(resultado)
+
+        if self.operacion_random == "+":
+            resultado_correcto = self.num1 + self.num2
+        elif self.operacion_random == "-":
+            resultado_correcto = self.num1 - self.num2
+        elif self.operacion_random == "*":
+            resultado_correcto = self.num1 * self.num2
+        elif self.operacion_random == "/":
+            resultado_correcto = self.num1 / self.num2
+        if resultado == resultado_correcto:
+            self.buenos += 1
+            self.label_buenos.config(text="Buenos: " + str(self.buenos))
+        else:
+            self.malos += 1
+            self.label_malos.config(text="Malos: " + str(self.malos))
+
+        self.juegos += 1
+        self.label_juegos.config(text="Juegos: " + str(self.juegos))
+
+    def run(self):
+        self.master.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    juego = JuegoMatematico(root)
+    juego.run()
